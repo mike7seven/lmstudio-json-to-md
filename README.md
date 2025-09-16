@@ -1,47 +1,3 @@
-# LM Studio Chat to Markdown Converter
-
-A Python script that converts LM Studio conversation JSON files into an HTML file showing a chat like interface. I am not going to lie, this is all AI slop, but it does work!
-
-## Description and Features
-
-This script transforms conversation data stored in JSON format (from LM Studio) into a Markdown formatted document that displays the conversation as a chat conversation interface. The output includes YAML frontmatter for use with Obsidian.md and other markdown rendering systems that can take advantage for frontmatter. This will help if you are an Obsidian Bases user. 
-
-
-## Usage
-python3 lmstudio_json_to_md.py [].conversation.json
-
-## Input Format
-
-The script expects a JSON file with the following structure:
-- `name`: Conversation name
-- `createdAt`: Timestamp of conversation creation
-- `tokenCount`: Total tokens in conversation
-- `systemPrompt`: System prompt used
-- `messages`: Array of message objects with:
-  - `versions`: Message versions with content, timestamps, and metadata
-  - `role`: Either "user" or "assistant"
-  - `content`: Text content of the message
-  - For assistant messages: Additional fields like `steps`, `genInfo`, `tool_calls`
-
-## Output
-
-The script generates a complete HTML file with:
-- Conversation header showing name, creation date, and token count
-- Color-coded user/assistant messages
-- Detailed thinking process sections
-- Model generation statistics
-- Tool call information
-- Timestamps for all messages
-- Responsive layout that works on desktop and mobile
-
-## Requirements
-
-- Python 3.x
-- JSON module (built-in)
-- datetime module (built-in)
-- os module (built-in)
-- re module (built-in)
-
 # LM Studio Chat → Markdown Converter
 
 A small Python utility that converts **LM Studio** `.conversation.json` files directly into **clean Markdown** with YAML frontmatter. It supports thinking-model logs, multiple message structures, and batch conversion. Optional integrations let you produce HTML (via a companion repo) or other formats (via Pandoc).
@@ -77,6 +33,7 @@ A small Python utility that converts **LM Studio** `.conversation.json` files di
 1) Place your LM Studio files (e.g. `1757985544936.conversation.json`) in this folder.  
 2) Run:
 ```sh
+# Process all LM Studio conversation files in the folder
 python3 lmstudio_json_to_md.py
 ```
 3) Find results in the `output/` directory, e.g.:
@@ -213,14 +170,6 @@ python3 lmstudio_json_to_md.py
   Flags for: input glob, output dir, include/exclude reasoning, timezone override, strict schema mode, and quiescent (no-log) mode.
 - **Tests & fixtures.**  
   Add small JSON fixtures for singleStep/multiStep/branched versions and snapshot tests for emitted Markdown.
-
-- **Interactive Chat Interface**: Clean, responsive design that mimics real chat applications
-- **Complete Metadata Display**: Shows timestamps, token count, model information, and system prompts
-- **Thinking Process Visualization**: Displays AI reasoning steps with clear separation
-- **Generation Statistics**: Shows detailed performance metrics including tokens per second, timing information, and token counts
-- **Tool Call Integration**: Visualizes any tool calls made during the conversation
-- **Responsive Design**: Works well on different screen sizes
-- **Customizable Output**: Generates HTML files ready for web viewing
 
 ---
 
