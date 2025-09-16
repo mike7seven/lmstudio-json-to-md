@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "lmstudio-json-to-md"
+version = "0.1.0"
+description = "Convert LM Studio conversation JSON files to Markdown with YAML frontmatter"
+readme = "README.md"
+authors = [
+  { name = "https://github.com/mike7seven" }
+]
+license = { text = "GPL-3.0-or-later" }
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)",
+  "Operating System :: OS Independent",
+]
+requires-python = ">=3.9"
+
+[project.urls]
+"Homepage" = "https://github.com/mike7seven/lmstudio-json-to-md"
+"Bug Tracker" = "https://github.com/mike7seven/lmstudio-json-to-md/issues"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["lmstudio_json_to_md*"]
