@@ -1,3 +1,5 @@
+# SPDX-License-Identifier: GPL-3.0-or-later
+# Copyright (c) 2025 
 import json, sys, copy
 from datetime import datetime
 

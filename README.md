@@ -226,4 +226,4 @@ python3 lmstudio_json_to_md.py
 
 ## License
 
-MIT
+GNU General Public License v3.0
